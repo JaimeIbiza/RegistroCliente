@@ -36,17 +36,14 @@
   </style>
 </head>
 <body>
-  <h1>Clientes</h1>
+  <h1>Clientes Registrados</h1>
   <table>
     <thead>
       <tr>
         <th>Nombre</th>
         <th>Email</th>
         <th>Teléfono</th>
-        <th>Género</th>
-        <th>Fecha de Nacimiento</th>
-        <th>Código Postal</th>
-        <th>Recibir Correos</th>
+        <th>Ticket</th>
       </tr>
     </thead>
     <tbody id="userTable">
@@ -66,10 +63,7 @@
         <td>${user.name}</td>
         <td>${user.email}</td>
         <td>${user.phone}</td>
-        <td>${user.gender}</td>
-        <td>${user.dob}</td>
-        <td>${user.zipcode}</td>
-        <td>${user.acceptEmails ? 'Sí' : 'No'}</td>
+        <td>${user.ticket}</td>
       `;
       userTable.appendChild(row);
     });
