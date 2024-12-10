@@ -73,24 +73,14 @@
     <label for="name">Nombre / Name</label>
     <input type="text" id="name" placeholder="Escribe tu nombre" size="5" required>
 
-    <label for="email">Correo electrónico / Email</label>
+    <label for="email">Correo Electrónico / Email</label>
     <input type="email" id="email" placeholder="Escribe tu correo electrónico" required>
 
-    <label for="phone">Número de teléfono / Phone number</label>
-    <input type="number" id="phone" placeholder="Escribe tu número" required>
+    <label for="phone">Número de Teléfono / Phone Number</label>
+    <input type="number" id="phone" placeholder="Escribe tu número de teléfono" required>
 
-    <label for="gender">Género / Gender</label>
-    <select id="gender">
-      <option value="Mujer">Mujer</option>
-      <option value="Hombre">Hombre</option>
-      <option value="Otro">Otro</option>
-    </select>
-
-    <label for="dob">Fecha de nacimiento / Date of birth</label>
-    <input type="date" id="dob" required>
-
-    <label for="zipcode">Código postal / ZIP code</label>
-    <input type="number" id="zipcode" placeholder="Escribe tu código postal" required>
+    <label for="ticket">Número de Ticket / Ticket Number</label>
+    <input type="number" id="ticket" placeholder="Escribe tu número de ticket" required>
 
     <div class="checkbox">
       <input type="checkbox" id="acceptEmails" style="width:100px; margin:1;">
@@ -110,9 +100,7 @@
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
-      const gender = document.getElementById('gender').value;
-      const dob = document.getElementById('dob').value;
-      const zipcode = document.getElementById('zipcode').value;
+      const ticket = document.getElementById('ticket').value;
       const acceptEmails = document.getElementById('acceptEmails').checked;
 
       // Recuperar datos previos de localStorage
@@ -126,7 +114,7 @@
       }
 
       // Guardar el nuevo cliente
-      users.push({ name, email, phone, gender, dob, zipcode, acceptEmails });
+      users.push({ name, email, phone, ticket, acceptEmails });
       localStorage.setItem('users', JSON.stringify(users));
 
       alert('Usuario guardado correctamente.');
