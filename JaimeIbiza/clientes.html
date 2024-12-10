@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #000;
+    }
+
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Clientes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Género</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Código Postal</th>
+        <th>Recibir Correos</th>
+      </tr>
+    </thead>
+    <tbody id="userTable">
+    </tbody>
+  </table>
+
+  <script>
+    const userTable = document.getElementById('userTable');
+
+    // Recuperar datos de localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Mostrar usuarios en la tabla
+    users.forEach(user => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td>${user.phone}</td>
+        <td>${user.gender}</td>
+        <td>${user.dob}</td>
+        <td>${user.zipcode}</td>
+        <td>${user.acceptEmails ? 'Sí' : 'No'}</td>
+      `;
+      userTable.appendChild(row);
+    });
+  </script>
+</body>
+</html>
