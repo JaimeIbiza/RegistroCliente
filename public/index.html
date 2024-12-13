@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,13 +83,10 @@
     <label for="ticket">Número de Ticket / Ticket Number</label>
     <input type="number" id="ticket" placeholder="Escribe tu número de ticket" required>
 
-    <div class="checkbox">
-      <input type="checkbox" id="acceptEmails" style="width:100px; margin:1;">
-      <label for="acceptEmails" style="font-size:13px; ">Acepto recibir correo electrónico</label>
-    </div>
-
     <button type="submit">Guardar</button>
   </form>
+
+  <script src="script.js"></script>
 
   <script>
     const form = document.getElementById('userForm');
@@ -101,7 +99,6 @@
       const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
       const ticket = document.getElementById('ticket').value;
-      const acceptEmails = document.getElementById('acceptEmails').checked;
 
       // Recuperar datos previos de localStorage
       const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -114,11 +111,11 @@
       }
 
       // Guardar el nuevo cliente
-      users.push({ name, email, phone, ticket, acceptEmails });
+      users.push({ name, email, phone, ticket });
       localStorage.setItem('users', JSON.stringify(users));
 
       alert('Usuario guardado correctamente.');
-      window.location.href = 'agradecimiento.html'; // Redirigir a la página de agradecimiento
+      window.location.href = 'agradecimiento.html'; // Redirigir a la página de clientes
     });
   </script>
 </body>
