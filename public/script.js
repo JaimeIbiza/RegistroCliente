@@ -1,4 +1,4 @@
-const form = document.getElementById("userForm");
+const form = document.getElementById("formulario");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -9,7 +9,7 @@ form.addEventListener("submit", async (e) => {
     const ticket = document.getElementById("ticket").checked;
 
     try {
-        const response = await fetch('https://registro-cliente-black.vercel.app//guardar-datos', {
+        const response = await fetch('https://registro-cliente-black.vercel.app/guardar-datos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
