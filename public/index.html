@@ -88,35 +88,6 @@
 
   <script src="script.js"></script>
 
-  <script>
-    const form = document.getElementById('userForm');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Captura los datos del formulario
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const ticket = document.getElementById('ticket').value;
-
-      // Recuperar datos previos de localStorage
-      const users = JSON.parse(localStorage.getItem('users')) || [];
-
-      // Verificar si el cliente ya existe
-      const existingUser = users.find(user => user.name === name);
-      if (existingUser) {
-        alert('Cliente ya existente.');
-        return;
-      }
-
-      // Guardar el nuevo cliente
-      users.push({ name, email, phone, ticket });
-      localStorage.setItem('users', JSON.stringify(users));
-
-      alert('Usuario guardado correctamente.');
-      window.location.href = 'agradecimiento.html'; // Redirigir a la página de clientes
-    });
-  </script>
 </body>
 </html>
